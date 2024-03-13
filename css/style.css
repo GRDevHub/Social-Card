@@ -42,7 +42,7 @@ body{
 }
 
 .card__header{
-    padding: 1rem;
+    padding: 1rem 1.2rem;
 
     display: flex;
     justify-content: space-between;
@@ -75,19 +75,24 @@ body{
     display: block;
     width: 100%;
     height: 100%;
+    scale: 1/1;
     object-fit: cover;
 }
 
 .card__options{
+    /* outline: 1px solid red; */
     height: 30px;
+    text-decoration: none;
 
     display: flex;
     justify-content: center;
     align-items: center
 }
 
-svg{
-    fill: var(--gray);
+i{
+    scale: 1;
+    color: var(--gray);
+    font-size: 1.2rem;
 }
 
 /* SECTION */
@@ -112,7 +117,7 @@ svg{
 }
 
 .icons{
-    padding: 10px 15px;
+    padding: .8rem 1rem;
 
     display: flex;
     justify-content: space-between;
@@ -125,6 +130,7 @@ svg{
 }
 
 .icons__icon{
+    /* outline: 1px solid red; */
     text-decoration: none;
     display: flex;
     align-items: center;
