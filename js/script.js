@@ -1,5 +1,7 @@
 const icons = document.querySelectorAll("i");
 const likeCountElement = document.querySelector('.like-count');
+const divOptions = document.querySelector('.options');
+const close = document.querySelector('.bi-x');
 
 const iconClickHandler = function(e){
     // console.log(e.target.classList.contains('fa-regular')); 
@@ -22,12 +24,18 @@ const iconClickHandler = function(e){
     }
 }
 
+const iconOptions = function(){
+    divOptions.classList.toggle('no-visible');
+}
+
 const countHeart = function(elementClass){
     //* Agregamos o quitamos el like
     likeCountElement.innerHTML = (elementClass === 'fa-solid') 
                                         ? (parseInt(likeCountElement.innerHTML) + 1) 
                                         : (parseInt(likeCountElement.innerHTML) - 1);
 }
+
+close.addEventListener("click", iconOptions);
 
 let i = 0;
 icons.forEach( icon => {
@@ -36,6 +44,9 @@ icons.forEach( icon => {
         //     icon.addEventListener("click", countHeart);
         // }
         icon.addEventListener("click", iconClickHandler);
+    }
+    if(i === 0){
+        icon.addEventListener("click", iconOptions);
     }
     i++;
 });
